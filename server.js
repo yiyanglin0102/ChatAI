@@ -21,7 +21,7 @@ app.post('/ask', async (req, res) => {
 async function askOpenAI(question) {
     const endpoint = 'https://api.openai.com/v1/chat/completions';
     const headers = {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
     };
     const data = {
