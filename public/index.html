@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Chat Assistant</h1>
+        </header>
+        <div class="chat-container">
+            <div id="chat-box"></div>
+            <div class="input-area">
+                <input id="user-input" type="text" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', async () => {
+            const question = userInput.value;
+            userInput.value = '';
+            chatBox.innerHTML += `<div class="user-message">${question}</div>`;
+
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question }),
+            });
+            const data = await response.json();
+            chatBox.innerHTML += `<div class="assistant-message">${data.answer}</div>`;
+        });
+    </script>
+</body>
+
+</html>
