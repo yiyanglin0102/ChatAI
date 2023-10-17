@@ -11,7 +11,7 @@ async function sendMessage() {
 
     const response = await fetch('/.netlify/functions/askOpenAI', {
         method: 'POST',
-        body: JSON.stringify({ question: question }),
+        body: JSON.stringify({ question: question + 'in 2 sentences' }),
         headers: {
             'Content-Type': 'application/json',
         },
