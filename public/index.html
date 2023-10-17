@@ -32,14 +32,15 @@
             userInput.value = '';
             chatBox.innerHTML += `<div class="user-message">${question}</div>`;
 
-            const response = await fetch('/ask', {
+            const response = await fetch('/.netlify/functions/askOpenAI', {
                 method: 'POST',
+                body: JSON.stringify({ question: question }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ question }),
             });
             const data = await response.json();
+
             chatBox.innerHTML += `<div class="assistant-message">${data.answer}</div>`;
         });
     </script>
