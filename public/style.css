@@ -92,3 +92,34 @@ button {
 button:hover {
     background-color: #ff4000;
 }
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .app-container {
+        margin: 20px 5px;
+    }
+
+    header {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    #chat-box {
+        max-height: 200px;
+    }
+
+    .user-message,
+    .assistant-message {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 10px;
+    }
+}
