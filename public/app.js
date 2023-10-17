@@ -5,7 +5,7 @@ const askButton = document.getElementById('askButton');
 askButton.addEventListener('click', async () => {
     const question = questionElement.value;
 
-    const response = await fetch('/.netlify/functions/ask-openai', {
+    const response = await fetch('/.netlify/functions/askOpenAI', {
         method: 'POST',
         body: JSON.stringify({ question }),
         headers: {
