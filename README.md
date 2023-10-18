@@ -4,9 +4,12 @@ A simple web-based chat interface that communicates with OpenAI's GPT-4 model. E
 
 ## Features
 
-- Real-time chat interface with AI.
-- Serverless architecture using Netlify Functions.
-- Mobile responsive design for chat on the go.
+- Developed and deployed a responsive web chat application that interacts with OpenAI's GPT-4 model to generate real-time conversational responses.
+- Implemented serverless functions using Netlify to handle API requests to OpenAI, ensuring efficient use of resources and scalability.
+- Integrated the OpenAI API using Axios for HTTP requests, implemented error handling mechanisms to manage potential API issues.
+- Enhanced user experience by enabling real-time message submission with the 'Enter' key and optimized API calls to ensure responses within 10 seconds.
+- Designed a retro-themed, mobile-responsive frontend using vanilla JavaScript, CSS, and the 'Press Start 2P' font from Google Fonts.
+- Configured domain redirections to route specific paths from the primary domain (yiyanglin.com/chat) to the chat application, ensuring seamless user navigation.
 
 ## Prerequisites
 
@@ -62,4 +65,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
 Feel free to modify any parts to better suit your needs or the specifics of your project!
