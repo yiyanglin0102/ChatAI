@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chatai-dev-165051-authRole",
+      "UnauthRoleArn": "arn:aws:iam::091974520371:role/amplify-chatai-dev-165051-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::091974520371:role/amplify-chatai-dev-165051-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-chatai-dev-165051-deployment",
+      "UnauthRoleName": "amplify-chatai-dev-165051-unauthRole",
+      "StackName": "amplify-chatai-dev-165051",
+      "StackId": "arn:aws:cloudformation:us-east-1:091974520371:stack/amplify-chatai-dev-165051/0c8ac8a0-dfe9-11ee-b11c-124a03366a6b",
+      "AmplifyAppId": "d20fbuq2m7lz45"
+    }
+  }
+}
