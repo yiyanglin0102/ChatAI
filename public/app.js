@@ -12,7 +12,7 @@ async function sendMessage() {
     const sanitizedQuestion = question.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     chatBox.innerHTML += `<div class="user-message">${sanitizedQuestion}</div>`;
 
-    const API_ENDPOINT = 'https://8givoynhgf.execute-api.us-east-1.amazonaws.com/default/askOpenAI';
+    const API_ENDPOINT = 'https://pi42egvpi5.execute-api.us-east-1.amazonaws.com/dev/askOpenAI';
 
     try {
         const response = await fetch(API_ENDPOINT, {
@@ -23,8 +23,7 @@ async function sendMessage() {
             body: JSON.stringify({ question: sanitizedQuestion }),
         });
         const data = await response.json();
-        console.log(data);
-        chatBox.innerHTML += `<div class="assistant-message">${data}</div>`;
+        chatBox.innerHTML += `<div class="assistant-message">${data.answer}</div>`;
     } catch (error) {
         console.error('Error:', error);
         chatBox.innerHTML += `<div class="assistant-message">Sorry, there was an error processing your request.</div>`;
