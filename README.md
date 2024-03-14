@@ -5,15 +5,17 @@ A simple web-based chat interface that communicates with OpenAI's GPT-4 model. E
 ## Features
 
 - Developed and deployed a responsive web chat application that interacts with OpenAI's GPT-4 model to generate real-time conversational responses.
-- Implemented serverless functions using Netlify to handle API requests to OpenAI, ensuring efficient use of resources and scalability.
-- Integrated the OpenAI API using Axios for HTTP requests, implemented error handling mechanisms to manage potential API issues.
-- Enhanced user experience by enabling real-time message submission with the 'Enter' key and optimized API calls to ensure responses within 10 seconds.
-- Designed a retro-themed, mobile-responsive frontend using vanilla JavaScript, CSS, and the 'Press Start 2P' font from Google Fonts.
-- Configured domain redirections to route specific paths from the primary domain (yiyanglin.com/chat) to the chat application, ensuring seamless user navigation.
+- Utilized AWS Amplify to streamline the deployment of the frontend and backend, ensuring a cohesive serverless architecture.
+- Leveraged AWS Lambda for executing backend logic in response to API requests, providing scalability and on-demand compute power.
+- Configured AWS API Gateway to create RESTful endpoints that serve as the entry point for the application, managing traffic and authorizations efficiently.
+- Integrated the OpenAI API using Axios for HTTP requests, with comprehensive error handling mechanisms to manage potential API concerns.
+- Enhanced user experience with immediate message submission capability via the 'Enter' key and optimized API call responses to maintain engagement.
+- Implemented a mobile-responsive, retro-themed frontend using vanilla JavaScript, CSS, and Google Fonts' 'Press Start 2P' for visual appeal.
+- Set up subdomain redirection using AWS Route 53, seamlessly directing [`chat.yiyanglin.com`](https://aws.amazon.com/amplify/) to the application and enhancing the user journey.
 
 ## Prerequisites
 
-- [Netlify CLI](https://www.netlify.com/products/dev/)
+- AWS Account with AWS Amplify, Lambda, and API Gateway configured.
 - [Node.js](https://nodejs.org/)
 - An OpenAI API key.
 
@@ -22,48 +24,40 @@ A simple web-based chat interface that communicates with OpenAI's GPT-4 model. E
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/openai-chat.git
-   cd openai-chat
-   ```
-2. **Install Dependencies**
-
-   ```bash
-   npm install
+   git clone https://github.com/yiyanglin0102/ChatAI.git
+   cd ChatAI
    ```
 
-3. **Environment**
+2. **Environment**
 
-   Create a `.env` file in the root directory and add your OpenAI API key:
+   - **Connect your GitHub repository to [AWS Amplify](https://aws.amazon.com/amplify/).**
+
+   - **Set your environment variables on the  [AWS Lambda](https://aws.amazon.com/lambda/).**
+
+   - **Create a `environment variable` in the root directory and add your OpenAI API key:**
 
    ```bash
    OPENAI_API_KEY=YOUR_API_KEY_HERE
    ```
 
-   Note: Ensure you have the `.env` file listed in your `.gitignore` so that it doesn't get committed.
+   ![Environment Variable](./files/environment.png)
 
-5. **Run Locally**
+   - **Upload backend lambda function.**
+
+    ![Environment Variable](./files/backend_code.png)
+
+3. **Run Locally**
 
    Start the development server:
 
-   ```bash
-   netlify dev
-   ```
-
-   Visit `http://localhost:8888` to view the chat application.
-
+   Visit `http://localhost:NUMBER` to view the front end chat application.
 
 ## Deployment
-
-   1. **Connect your GitHub repository to [Netlify](https://www.netlify.com/).**
-
-   2. **Set your environment variables on the Netlify dashboard.**
-
-   3. **Deploy your site.**
-
+ - To redirect the subdomain chat.yiyanglin.com to the Amplify app, a CNAME record in AWS Route 53 DNS settings was created, pointing to the Amplify-generated domain.
 ## Tech Stack
 
-   - Frontend: Vanilla HTML, CSS, and JavaScript.
-   - Backend: Netlify Functions with Axios for API requests.
+   - Frontend: Vanilla HTML, CSS, and JavaScript. Hosted on AWS Amplify Console.
+   - Backend: AWS Lambda for serverless API requests, with API Gateway as the HTTP endpoint interface.
 
 ## Contributing
    Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
