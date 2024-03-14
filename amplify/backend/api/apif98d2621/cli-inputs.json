@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/askOpenAI": {
+      "name": "/askOpenAI",
+      "lambdaFunction": "askOpenAI",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,1 +1,43 @@
-{}
+{
+  "api": {
+    "apif98d2621": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "askOpenAI"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "askOpenAI": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_askOpenAI_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "askOpenAI"
+        }
+      ]
+    },
+    "AMPLIFY_function_askOpenAI_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "askOpenAI"
+        }
+      ]
+    }
+  }
+}

@@ -10,6 +10,17 @@
       "StackName": "amplify-chatai-dev-165051",
       "StackId": "arn:aws:cloudformation:us-east-1:091974520371:stack/amplify-chatai-dev-165051/0c8ac8a0-dfe9-11ee-b11c-124a03366a6b",
       "AmplifyAppId": "d20fbuq2m7lz45"
+    },
+    "categories": {
+      "function": {
+        "askOpenAI": {
+          "deploymentBucketName": "amplify-chatai-dev-165051-deployment",
+          "s3Key": "amplify-builds/askOpenAI-376f4334704f38616b2f-build.zip"
+        }
+      },
+      "api": {
+        "apif98d2621": {}
+      }
     }
   }
 }
